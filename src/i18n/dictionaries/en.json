@@ -1,0 +1,19 @@
+{
+  "welcome": "Welcome",
+  "description": "Your ultimate platform for poker tournament management and tracking",
+  "view_scoreboard": "View Scoreboard",
+  "view_tournaments": "View Tournaments",
+  "tournament_tracking_title": "Tournament Tracking",
+  "tournament_tracking_description": "Keep track of all tournament results and player performances.",
+  "points_system_title": "Points System",
+  "points_system_description": "Earn points based on your tournament rankings.",
+  "player_profiles_title": "Player Profiles",
+  "player_profiles_description": "View detailed statistics and tournament history.",
+
+  "Home": "Home",
+  "Scoreboard": "Scoreboard",
+  "Tournaments": "Tournaments",
+  "Admin": "Admin",
+  "Admin Login": "Admin Login",
+  "Logout":"Logout"
+}

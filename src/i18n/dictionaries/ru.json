@@ -1,0 +1,19 @@
+{
+  "welcome": "Добро пожаловать",
+  "description": "Ваша идеальная платформа для управления и отслеживания покерных турниров",
+  "view_scoreboard": "Посмотреть таблицу результатов",
+  "view_tournaments": "Посмотреть турниры",
+  "tournament_tracking_title": "Отслеживание турниров",
+  "tournament_tracking_description": "Следите за результатами всех турниров и выступлениями игроков.",
+  "points_system_title": "Система очков",
+  "points_system_description": "Зарабатывайте очки в зависимости от ваших мест в турнирах.",
+  "player_profiles_title": "Профили игроков",
+  "player_profiles_description": "Просматривайте подробную статистику и историю участия в турнирах.",
+
+  "Home": "Главная",
+  "Scoreboard": "Табло",
+  "Tournaments": "Турниры",
+  "Admin": "Администратор",
+  "Admin Login": "Панель Администратора",
+  "Logout":"Выйти"
+}

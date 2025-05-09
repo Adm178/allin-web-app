@@ -1,39 +1,40 @@
+'use client';
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useTranslation } from '@/components/TranslationsProvider';
+
 
 export default function HomePage() {
+  const { t } = useTranslation();
+
   const features = [
     {
-      title: "Tournament Tracking",
-      description:
-        "Keep track of all tournament results and player performances.",
+      title: t('tournament_tracking_title'),
+      description: t('tournament_tracking_description'),
     },
     {
-      title: "Points System",
-      description: "Earn points based on your tournament rankings.",
+      title: t('points_system_title'),
+      description: t('points_system_description'),
     },
     {
-      title: "Player Profiles",
-      description: "View detailed statistics and tournament history.",
+      title: t('player_profiles_title'),
+      description: t('player_profiles_description'),
     },
   ];
 
   return (
     <div className="container mx-auto px-4 py-8">
       <section className="text-center mb-16">
-        <h1 className="text-4xl font-bold mb-4">
-          Welcome to All In Poker Club
-        </h1>
-        <p className="text-xl text-gray-600 mb-8">
-          Your ultimate platform for poker tournament management and tracking
-        </p>
+        <h1 className="text-4xl font-bold mb-4">{t('welcome')}</h1>
+        <p className="text-xl text-gray-600 mb-8">{t('description')}</p>
         <div className="flex justify-center space-x-4">
           <Button asChild>
-            <Link href="/scoreboard">View Scoreboard</Link>
+            <Link href="/scoreboard">{t('view_scoreboard')}</Link>
           </Button>
           <Button asChild>
-            <Link href="/tournaments">View Tournaments</Link>
+            <Link href="/tournaments">{t('view_tournaments')}</Link>
           </Button>
         </div>
       </section>

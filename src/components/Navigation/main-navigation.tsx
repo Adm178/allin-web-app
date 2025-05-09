@@ -7,16 +7,10 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { useSession } from "@supabase/auth-helpers-react";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef} from "react";
 import Image from "next/image";
 import { Skeleton } from "@/components/ui/Skeleton";
-
-const NAV_ITEMS = [
-  { href: "/", label: "Home" },
-  { href: "/scoreboard", label: "Scoreboard" },
-  { href: "/tournaments", label: "Tournaments" },
-  { href: "/admin", label: "Admin" },
-];
+import { useTranslation } from '@/components/TranslationsProvider';
 
 function DarkModeToggle({ fullWidth = false }: { fullWidth?: boolean }) {
   const [dark, setDark] = useState<boolean | null>(null);
@@ -56,13 +50,25 @@ function DarkModeToggle({ fullWidth = false }: { fullWidth?: boolean }) {
   );
 }
 
-export function MainNavigation() {
+type MainNavigationProps = {
+  locale: string;
+};
+
+export function MainNavigation({ }: MainNavigationProps) {
+  const { t } = useTranslation();
   const session = useSession();
   const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
   const drawerRef = useRef<HTMLDivElement>(null);
+
+  const NAV_ITEMS = [
+  { href: "/", label: t("Home") },
+  { href: "/scoreboard", label: t("Scoreboard") },
+  { href: "/tournaments", label: t("Tournaments") },
+  { href: "/admin", label: t("Admin") },
+  ];
 
   useEffect(() => {
     setMounted(true);
@@ -196,7 +202,7 @@ export function MainNavigation() {
               onClick={handleLogout}
               className="min-h-[44px] min-w-[44px]"
             >
-              Logout
+              {t('Logout')}
             </Button>
           ) : (
             <Button
@@ -204,7 +210,7 @@ export function MainNavigation() {
               asChild
               className="min-h-[44px] min-w-[44px]"
             >
-              <Link href="/admin">Admin Login</Link>
+              <Link href="/admin">{t('Admin Login')}</Link>
             </Button>
           )}
           <DarkModeToggle />
@@ -286,7 +292,7 @@ export function MainNavigation() {
                   onClick={handleLogout}
                   className="w-full min-h-[44px] min-w-[44px]"
                 >
-                  Logout
+                  {t('Logout')}
                 </Button>
               ) : (
                 <Button
@@ -294,7 +300,7 @@ export function MainNavigation() {
                   asChild
                   className="w-full min-h-[44px] min-w-[44px]"
                 >
-                  <Link href="/admin">Admin Login</Link>
+                  <Link href="/admin">{t('Admin Login')}</Link>
                 </Button>
               )}
               <DarkModeToggle fullWidth />
